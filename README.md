@@ -1,5 +1,7 @@
 # Lavalink on Railway
 
+[![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/new/template/OiWMq-?utm_medium=integration&utm_source=button&utm_campaign=lavalink)
+
 One-click [Lavalink](https://lavalink.dev) 4.2.2 for Discord music bots, with the official youtube-plugin 1.18.2 and a generated password.
 
 ## What it deploys
