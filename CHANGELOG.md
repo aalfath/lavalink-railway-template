@@ -10,4 +10,4 @@ read the entry before you apply it.
   `sha256:96be2be7ee50d35a9bd42c8c7b99e2a4b741f09123066c1ebb9e014dd7db204d`, Java 17).
 - youtube-plugin 1.18.2; Lavalink's built-in YouTube source is off.
 - Generated password, refuses to start with an empty one. Java heap capped at 1 GB (override with `JAVA_OPTS`).
-- Health check `/metrics` (Prometheus, no password needed).
+- Health check `/metrics` (Prometheus, no password needed), set in the template's service settings.

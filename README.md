@@ -11,8 +11,9 @@ One service, **Lavalink**, built from this repo:
 - `Dockerfile`: the official image `ghcr.io/lavalink-devs/lavalink:4.2.2-alpine`, pinned by digest (Java 17), plus `application.yml` and a start script.
   The default `4.2.2` tag runs Java 18, which crashes on Railway at start, so the Alpine variant is used.
 - `application.yml`: port 2333 on IPv4 and IPv6, built-in YouTube off, youtube-plugin 1.18.2 (clients `MUSIC`, `ANDROID_VR`, `WEB`, `WEBEMBEDDED`), Bandcamp, SoundCloud, Twitch, Vimeo, Niconico and HTTP sources on, local files off, Prometheus metrics at `/metrics`.
-- `railway-start.sh`: refuses to start if the password is empty, caps the Java heap at 1 GB, then runs Lavalink.
-- `railway.json`: Dockerfile build, health check `/metrics`, restart on failure.
+- `railway-start.sh`: refuses to start if the password is empty, caps the Java heap at 1 GB, then runs Lavalink. It's the image's entrypoint, so no start command is needed.
+
+The template itself sets the health check (`/metrics`, which answers without the password), restart on failure, and a public domain on port 2333. There's no `railway.json`: Railway no longer reads Config as Code for new services.
 
 Lavalink keeps no data on disk, so there is no volume and no database.
 
